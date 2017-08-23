@@ -1,0 +1,17 @@
+<form #form="ngForm">
+  <p>
+    Your Name:
+    <input 
+      type="text" 
+      name="name" 
+      required
+      minlength="2"
+      [(ngModel)]="user.name"
+      #name="ngModel">
+  </p>
+    <input 
+      (click)="onClick()"
+      type="submit"
+      [disabled]="!form.valid"
+      [routerLink]="['/dashboard']">
+</form>

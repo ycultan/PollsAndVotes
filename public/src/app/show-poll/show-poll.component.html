@@ -1,0 +1,36 @@
+<a [routerLink]="['/dashboard']">Go to Polls</a>
+
+<div *ngFor="let question of poll">
+  <h1>{{question.question}}</h1>
+</div>
+<p>Click the Vote button to choose one</p>
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let one of poll">
+    <td>{{one.option1.text}}</td>
+    <td>{{one.option1.vote}}</td>
+    <td><button (click)="onClick1(one._id)">Vote</button></td>
+  </tr>
+  <tr *ngFor="let one of poll">
+    <td>{{one.option2.text}}</td>
+    <td>{{one.option2.vote}}</td>
+    <td><button (click)="onClick2(one._id)">Vote</button></td>
+  </tr>
+  <tr *ngFor="let one of poll">
+    <td>{{one.option3.text}}</td>
+    <td>{{one.option3.vote}}</td>
+    <td><button (click)="onClick3(one._id)">Vote</button></td>
+  </tr>
+  <tr *ngFor="let one of poll">
+    <td>{{one.option4.text}}</td>
+    <td>{{one.option4.vote}}</td>
+    <td><button (click)="onClick4(one._id)">Vote</button></td>
+  </tr>
+</table>
+
+{{poll | json}}
